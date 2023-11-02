@@ -1,0 +1,10 @@
+.TodoList {
+  margin: 0;
+  padding: 0 0 56px 0;
+  list-style: none;
+
+  /* margin: 15px 24px; */
+  /* width: calc(50% - 40px); */
+  /* text-align: center;
+  font-family: "Montserrat"; */
+}
