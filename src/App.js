@@ -36,14 +36,26 @@ function App() {
       </TodoHeader>
 
 
-      <TodoList>
-        {loading && (
-          <>
-            <TodosLoading />
+      <TodoList
+        error={error}
+        loading={loading}
+        searchTodos={searchTodos}
+        onError={() => <TodosError />}
+        onLoading={() => <TodosLoading />}
+        onEmptyTodos={() => <EmptyTodos />}
+        render={todo => (
+          <TodoItem
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+            onComplete={() => completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
+          />)}
+      />
 
-          </>
-        )}
+      {/* <TodoList>
         {error && <TodosError />}
+        {loading && (<TodosLoading />)}
         {!loading && searchTodos.length === 0 && <EmptyTodos />}
 
         {searchTodos.map((todo) => (
@@ -55,7 +67,7 @@ function App() {
             onDelete={() => deleteTodo(todo.text)}
           />
         ))}
-      </TodoList>
+      </TodoList> */}
 
       <CreateTodoBtn setOpenModal={setOpenModal} />
 
