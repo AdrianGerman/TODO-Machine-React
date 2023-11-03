@@ -1,17 +1,18 @@
 import "../styles/TodoList.css";
 
 function TodoList(props) {
+  const renderFunc = props.children || props.render;
   return (
-    <section className="TodoList">
+    <section>
       {props.error && props.onError()}
       {props.loading && props.onLoading()}
       {!props.loading && !props.totalTodos && props.onEmptyTodos()}
       {!!(props.totalTodos && !props.searchTodos.length)
         && props.onEmptySearchResults(props.searchText)}
 
-      {props.searchTodos.map(props.render)}
-      <ul>
-        {props.children}
+      <ul className="TodoList">
+        {props.searchTodos.map(renderFunc)}
+
       </ul>
     </section>
   )
