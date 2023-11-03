@@ -10,6 +10,7 @@ import { CreateTodoBtn } from "./components/CreateTodoBtn";
 import { TodosLoading } from "./components/TodosLoading";
 import { TodosError } from "./components/TodosError";
 import { EmptyTodos } from "./components/EmptyTodos";
+import { EmptySearchResults } from "./components/EmptySearchResults";
 import { Modal } from "./components/TodoModal";
 import { TodoForm } from "./components/TodoForm";
 
@@ -40,9 +41,11 @@ function App() {
         error={error}
         loading={loading}
         searchTodos={searchTodos}
+        totalTodos={totalTodos}
         onError={() => <TodosError />}
         onLoading={() => <TodosLoading />}
         onEmptyTodos={() => <EmptyTodos />}
+        onEmptySearchResults={() => <EmptySearchResults searchText={searchValue} />}
         render={todo => (
           <TodoItem
             key={todo.text}
@@ -51,7 +54,18 @@ function App() {
             onComplete={() => completeTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
           />)}
+      >
+        {/* { todo => (
+      <TodoItem
+        key={todo.text}
+        text={todo.text}
+        completed={todo.completed}
+        onComplete={() => completeTodo(todo.text)}
+        onDelete={() => deleteTodo(todo.text)}
       />
+        )} */}
+
+      </TodoList >
 
       {/* <TodoList>
         {error && <TodosError />}
@@ -69,13 +83,14 @@ function App() {
         ))}
       </TodoList> */}
 
-      <CreateTodoBtn setOpenModal={setOpenModal} />
+      < CreateTodoBtn setOpenModal={setOpenModal} />
 
       {openModal && (
         <Modal>
           <TodoForm addTodo={addTodo} setOpenModal={setOpenModal} />
         </Modal>
-      )}
+      )
+      }
     </>
   );
 }
