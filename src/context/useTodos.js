@@ -1,12 +1,11 @@
 import React from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
-// const TodoContext = React.createContext();
-
 function useTodos() {
   const {
     item: todos,
     saveItem: saveTodos,
+    sincronizeItem: sincronizeTodos,
     loading,
     error,
   } = useLocalStorage("TODOS_V1", []);
@@ -33,18 +32,14 @@ function useTodos() {
 
   const completeTodo = (text) => {
     const newTodos = [...todos];
-    const todoIndex = (newTodos.findIndex = newTodos.findIndex(
-      (todo) => todo.text === text
-    ));
+    const todoIndex = (newTodos.findIndex = newTodos.findIndex((todo) => todo.text === text));
     newTodos[todoIndex].completed = true;
     saveTodos(newTodos);
   };
 
   const deleteTodo = (text) => {
     const newTodos = [...todos];
-    const todoIndex = (newTodos.findIndex = newTodos.findIndex(
-      (todo) => todo.text === text
-    ));
+    const todoIndex = (newTodos.findIndex = newTodos.findIndex((todo) => todo.text === text));
     newTodos.splice(todoIndex, 1);
     saveTodos(newTodos);
   };
@@ -62,6 +57,7 @@ function useTodos() {
     openModal,
     setOpenModal,
     addTodo,
+    sincronizeTodos,
   };
 }
 

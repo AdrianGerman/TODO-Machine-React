@@ -29,6 +29,7 @@ function App() {
     totalTodos,
     searchValue,
     setSearchValue,
+    sincronizeTodos,
   } = useTodos();
   return (
     <>
@@ -90,7 +91,7 @@ function App() {
         </Modal>
       )}
 
-      <ChangeAlertWithStorageListener />
+      <ChangeAlertWithStorageListener sincronize={sincronizeTodos} />
     </>
   );
 }
