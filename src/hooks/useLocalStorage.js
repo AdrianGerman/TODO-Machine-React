@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 
 function useLocalStorage(itemName, initialValue) {
@@ -25,7 +26,8 @@ function useLocalStorage(itemName, initialValue) {
         setError(true);
       }
     }, 2000);
-  }, [initialValue, itemName]);
+  }, []);
+  // initialValue, itemName  estos valores estan dentro del array vacio, pero el bucle seguia
   // nomas es para depurar errores, no olvidar el arreglo de arriba o se crean bucles bien perrones
   // console.log("a");
 
