@@ -19,7 +19,7 @@ function ChangeAlert({ show, toggleShow }) {
       </div>
     );
   } else {
-    return <p>Eto eta vacio</p>;
+    return null;
   }
 }
 
