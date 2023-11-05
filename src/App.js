@@ -13,7 +13,7 @@ import { EmptyTodos } from "./components/EmptyTodos";
 import { EmptySearchResults } from "./components/EmptySearchResults";
 import { Modal } from "./components/TodoModal";
 import { TodoForm } from "./components/TodoForm";
-import { ChangeAlertWithStorageListener } from "./components/ChangeAlert";
+import { ChangeAlert } from "./components/ChangeAlert";
 
 function App() {
   const {
@@ -91,7 +91,7 @@ function App() {
         </Modal>
       )}
 
-      <ChangeAlertWithStorageListener sincronize={sincronizeTodos} />
+      <ChangeAlert sincronize={sincronizeTodos} />
     </>
   );
 }
