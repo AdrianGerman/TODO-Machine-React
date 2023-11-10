@@ -16,21 +16,13 @@ import { TodoForm } from "./components/TodoForm";
 import { ChangeAlert } from "./components/ChangeAlert";
 
 function App() {
-  const {
-    loading,
-    error,
-    searchTodos,
-    completeTodo,
-    deleteTodo,
-    openModal,
-    setOpenModal,
-    addTodo,
-    completedTodos,
-    totalTodos,
-    searchValue,
-    setSearchValue,
-    sincronizeTodos,
-  } = useTodos();
+  const { states, stateUpdaters } = useTodos();
+
+  const { loading, error, completedTodos, totalTodos, searchValue, searchTodos, openModal } =
+    states;
+
+  const { setSearchValue, completeTodo, deleteTodo, setOpenModal, addTodo, sincronizeTodos } =
+    stateUpdaters;
   return (
     <>
       <TodoHeader loading={loading}>
@@ -66,22 +58,6 @@ function App() {
           />
         )}
       </TodoList>
-
-      {/* <TodoList>
-        {error && <TodosError />}
-        {loading && (<TodosLoading />)}
-        {!loading && searchTodos.length === 0 && <EmptyTodos />}
-
-        {searchTodos.map((todo) => (
-          <TodoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={() => completeTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
-          />
-        ))}
-      </TodoList> */}
 
       <CreateTodoBtn setOpenModal={setOpenModal} />
 
