@@ -1,0 +1,7 @@
+import { TodoIcon } from "./TodoIcon";
+
+function EditIcon({ onEdit }) {
+  return <TodoIcon type="edit" onClick={onEdit} />;
+}
+
+export { EditIcon };

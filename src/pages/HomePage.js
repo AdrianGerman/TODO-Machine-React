@@ -18,11 +18,24 @@ import { ChangeAlert } from "../components/ChangeAlert";
 function HomePage() {
   const { states, stateUpdaters } = useTodos();
 
-  const { loading, error, completedTodos, totalTodos, searchValue, searchTodos, openModal } =
-    states;
+  const {
+    loading,
+    error,
+    completedTodos,
+    totalTodos,
+    searchValue,
+    searchTodos,
+    openModal,
+  } = states;
 
-  const { setSearchValue, completeTodo, deleteTodo, setOpenModal, addTodo, sincronizeTodos } =
-    stateUpdaters;
+  const {
+    setSearchValue,
+    completeTodo,
+    deleteTodo,
+    setOpenModal,
+    addTodo,
+    sincronizeTodos,
+  } = stateUpdaters;
   return (
     <>
       <TodoHeader loading={loading}>
@@ -38,7 +51,9 @@ function HomePage() {
         onError={() => <TodosError />}
         onLoading={() => <TodosLoading />}
         onEmptyTodos={() => <EmptyTodos />}
-        onEmptySearchResults={() => <EmptySearchResults searchText={searchValue} />}
+        onEmptySearchResults={() => (
+          <EmptySearchResults searchText={searchValue} />
+        )}
       >
         {(todo) => (
           <TodoItem
@@ -47,6 +62,7 @@ function HomePage() {
             completed={todo.completed}
             onComplete={() => completeTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
+            onEdit={() => console.log("Toy editandooo")}
           />
         )}
       </TodoList>
