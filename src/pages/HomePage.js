@@ -11,8 +11,6 @@ import { TodosLoading } from "../components/TodosLoading";
 import { TodosError } from "../components/TodosError";
 import { EmptyTodos } from "../components/EmptyTodos";
 import { EmptySearchResults } from "../components/EmptySearchResults";
-import { Modal } from "../components/TodoModal";
-import { TodoForm } from "../components/TodoForm";
 import { ChangeAlert } from "../components/ChangeAlert";
 import { useNavigate } from "react-router-dom";
 
@@ -27,17 +25,10 @@ function HomePage() {
     totalTodos,
     searchValue,
     searchTodos,
-    // openModal,
   } = states;
 
-  const {
-    // setOpenModal,
-    // addTodo,
-    setSearchValue,
-    completeTodo,
-    deleteTodo,
-    sincronizeTodos,
-  } = stateUpdaters;
+  const { setSearchValue, completeTodo, deleteTodo, sincronizeTodos } =
+    stateUpdaters;
   return (
     <>
       <TodoHeader loading={loading}>
@@ -70,12 +61,6 @@ function HomePage() {
       </TodoList>
 
       <CreateTodoBtn onClick={() => navigate("/new")} />
-
-      {/* {openModal && (
-        <Modal>
-          <TodoForm addTodo={addTodo} setOpenModal={setOpenModal} />
-        </Modal>
-      )} */}
 
       <ChangeAlert sincronize={sincronizeTodos} />
     </>
