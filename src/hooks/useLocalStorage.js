@@ -2,12 +2,17 @@
 import React from "react";
 
 function useLocalStorage(itemName, initialValue) {
-  const [state, dispatch] = React.useReducer(reducer, initialState({ initialValue }));
+  const [state, dispatch] = React.useReducer(
+    reducer,
+    initialState({ initialValue })
+  );
   const { sincronizedItem, error, loading, item } = state;
 
   // ACTION CREATORS
-  const onError = (error) => dispatch({ type: actionTypes.error, payload: error });
-  const onSuccess = (item) => dispatch({ type: actionTypes.success, payload: item });
+  const onError = (error) =>
+    dispatch({ type: actionTypes.error, payload: error });
+  const onSuccess = (item) =>
+    dispatch({ type: actionTypes.success, payload: item });
   const onSave = (item) => dispatch({ type: actionTypes.save, payload: item });
   const onSincronize = () => dispatch({ type: actionTypes.sincronize });
 
@@ -27,7 +32,7 @@ function useLocalStorage(itemName, initialValue) {
       } catch (error) {
         onError(error);
       }
-    }, 2000);
+    }, 1000);
   }, [sincronizedItem]);
   // initialValue, itemName  estos valores estan dentro del array vacio, pero el bucle seguia
   // nomas es para depurar errores, no olvidar el arreglo de arriba o se crean bucles bien perrones
