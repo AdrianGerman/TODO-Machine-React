@@ -1,13 +1,8 @@
 import "../styles/CreateTodoBtn.css";
 
-function CreateTodoBtn({ setOpenModal }) {
+function CreateTodoBtn(props) {
   return (
-    <button
-      className="CreateTodoBtn"
-      onClick={() => {
-        setOpenModal((state) => !state);
-      }}
-    >
+    <button className="CreateTodoBtn" onClick={props.onClick}>
       +
     </button>
   );
