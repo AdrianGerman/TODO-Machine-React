@@ -1,5 +1,5 @@
 {
-  "name": "intro-react-base",
+  "name": "TODO-Machine-React",
   "version": "0.1.0",
   "dependencies": {
     "react": "^18",
@@ -32,7 +32,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://AdrianGerman.github.io/TODO-Machine",
+  "homepage": "https://AdrianGerman.github.io/TODO-Machine-React",
   "devDependencies": {
     "gh-pages": "^6.0.0"
   }
