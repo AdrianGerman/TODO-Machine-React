@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/TODO-Machine-React/static/css/main.59a7c82c.css",
+    "main.css": "/TODO-Machine-React/static/css/main.609d8ef3.css",
     "main.js": "/TODO-Machine-React/static/js/main.4f99c55d.js",
     "index.html": "/TODO-Machine-React/index.html",
     "static/media/completev.svg": "/TODO-Machine-React/static/media/completev.fecb5d172078902f6a634150d0cd3909.svg",
     "static/media/edit.svg": "/TODO-Machine-React/static/media/edit.569363b1fad8252af1f4f6e04345ba2e.svg",
     "static/media/deletex.svg": "/TODO-Machine-React/static/media/deletex.8052d228def63ef4028c25ba6bac328d.svg",
-    "main.59a7c82c.css.map": "/TODO-Machine-React/static/css/main.59a7c82c.css.map",
+    "main.609d8ef3.css.map": "/TODO-Machine-React/static/css/main.609d8ef3.css.map",
     "main.4f99c55d.js.map": "/TODO-Machine-React/static/js/main.4f99c55d.js.map"
   },
   "entrypoints": [
-    "static/css/main.59a7c82c.css",
+    "static/css/main.609d8ef3.css",
     "static/js/main.4f99c55d.js"
   ]
 }
